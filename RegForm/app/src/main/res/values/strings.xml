@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RegForm</string>
+    <string-array name="semesters_array">
+        <item>Sem1</item>
+        <item>Sem2</item>
+        <item>Sem3</item>
+        <item>Sem4</item>
+    </string-array>
+</resources>
