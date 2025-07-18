@@ -1,11 +1,9 @@
-Sure! Here's the **Markdown code** for the `README.md` file — copy and paste this into a file named `README.md` in your project directory:
-
 ```markdown
 # 🧠 Face Recognition System Using RetinaFace + FaceNet
 
 This project implements a **face recognition system** that uses:
 
-- ✅ **RetinaFace** for face detection  
+- ✅ **RetinaFace** for face detection
 - ✅ **FaceNet (via keras-facenet)** for face embedding and comparison
 
 It compares an unknown face (from a test image) with known faces stored in a folder and identifies the person using cosine similarity.
@@ -13,17 +11,16 @@ It compares an unknown face (from a test image) with known faces stored in a fol
 ---
 
 ## 📁 Project Structure
-
 ```
 
-face\_recognition\_project/
-├── known\_faces/            # Folder with known person images
-│   ├── alice.jpg
-│   ├── bob.jpg
-├── test.jpg                # Test image to identify
-├── recognize\_faces.py      # Main script
-├── embeddings\_cache.pkl    # Auto-generated cache for speed
-└── README.md               # This file
+face_recognition_project/
+├── known_faces/ # Folder with known person images
+│ ├── alice.jpg
+│ ├── bob.jpg
+├── test.jpg # Test image to identify
+├── recognize_faces.py # Main script
+├── embeddings_cache.pkl # Auto-generated cache for speed
+└── README.md # This file
 
 ````
 
@@ -66,17 +63,27 @@ pip install tf-keras
 2. Face embeddings are cached in `embeddings_cache.pkl` (only computed once).
 3. The test image (`test.jpg`) is analyzed:
 
-   * Face detected with RetinaFace
-   * Embedding extracted with FaceNet
-   * Compared with known embeddings using cosine similarity
+   - Face detected with RetinaFace
+   - Embedding extracted with FaceNet
+   - Compared with known embeddings using cosine similarity
+
 4. Identity is displayed on the image.
 
 ---
 
 ## ▶️ Run the Program
 
+For run without caching
+
 ```bash
-python recognize_faces.py
+python recognize_faces_1.py
+```
+
+For run with catching
+For run without caching
+
+```bash
+python recognize_faces_2.py
 ```
 
 If it's your first time running the script, it will generate and save face embeddings for known faces.
@@ -106,9 +113,9 @@ python recognize_faces.py
 
 ## 🧠 Recognition Logic
 
-* The face similarity is computed using **cosine similarity**.
-* A threshold (`> 0.7`) is used to decide whether it is a known person.
-* You can tweak this threshold for higher or lower tolerance.
+- The face similarity is computed using **cosine similarity**.
+- A threshold (`> 0.7`) is used to decide whether it is a known person.
+- You can tweak this threshold for higher or lower tolerance.
 
 ---
 
@@ -120,7 +127,7 @@ After processing, the image will be displayed with bounding boxes and predicted 
 [INFO] Recognized: Bob (0.84)
 ```
 
-*(If using matplotlib, the image will open in a window)*
+_(If using matplotlib, the image will open in a window)_
 
 ---
 
@@ -159,13 +166,12 @@ Free for academic, personal, and non-commercial use.
 
 ## 🙋‍♂️ Need Help?
 
-* Make sure all images are **clear frontal face photos**.
-* Use `python=3.9` as it's widely compatible with TensorFlow 2.x.
-* If you're stuck, open an issue or reach out.
+- Make sure all images are **clear frontal face photos**.
+- Use `python=3.9` as it's widely compatible with TensorFlow 2.x.
+- If you're stuck, open an issue or reach out.
 
 Happy coding! 🚀
 
 ```
 
-Let me know if you’d like the matching `recognize_faces.py` script or a `requirements.txt` file as well.
 ```
