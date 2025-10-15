@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  emulator1:
+    image: androidsdk/android-30
+    privileged: true
+    volumes:
+      - /dev/kvm:/dev/kvm
+    ports:
+      - "5555:5555"   # ADB port
+      - "8554:8554"   # Web interface (if supported)
+    environment:
+      - ANDROID_EMULATOR_DEVICE=pixel
+      - ANDROID_EMULATOR_ARGS=-skin 720x1280 -camera-back none -camera-front none -no-audio -no-boot-anim -accel on -engine qemu2 -gpu swiftshader_indirect -no-window
+
+  emulator2:
+    image: androidsdk/android-30
+    privileged: true
+    volumes:
+      - /dev/kvm:/dev/kvm
+    ports:
+      - "5557:5555"
+      - "8555:8554"
+    environment:
+      - ANDROID_EMULATOR_DEVICE=pixel
+      - ANDROID_EMULATOR_ARGS=-skin 720x1280 -camera-back none -camera-front none -no-audio -no-boot-anim -accel on -engine qemu2 -gpu swiftshader_indirect -no-window
